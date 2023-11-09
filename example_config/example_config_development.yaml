@@ -1,0 +1,34 @@
+# Warning: The following configuration file is an example, and it is insecure by default. Please carefully
+# review and change values accordingly before deploying to a production environment. You are responsible
+# for your deployment.
+
+extends:
+  - example_config_header_auth.yaml
+
+environment: dev
+development: true
+
+tornado:
+  xsrf: false # So you can test POST requests with Postman
+
+# A development configuration can specify a specific user to impersonate locally.
+_development_user_override: consoleme_admin@example.com
+
+# A development configuration can specify specific groups to consider the user a member of locally.
+_development_groups_override:
+  - groupa@example.com
+  - groupb@example.com
+  - configeditors@example.com
+  - consoleme_admins@example.com
+  - consoleme_admins # Groups do not need to be an email address
+
+# ConsoleMe uses a Local DynamoDB docker container for development. You won't want this setting in your
+# test/prod stacks.
+dynamodb_server: http://localhost:8005
+
+# Whether to show terraform exporter tab or not
+export_to_terraform_enabled: true
+# To turn off IP restrictions for challenge URL when developing Weep and ConsoleMe concurrently. This might be needed
+# because Weep tends to make an IPv6 request, and the browser makes an IPv4 request.
+challenge_url:
+  request_ip_must_match_challenge_creation_ip: false

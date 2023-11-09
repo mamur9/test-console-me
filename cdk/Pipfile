@@ -1,0 +1,14 @@
+[[source]]
+url = 'https://pypi.python.org/simple'
+verify_ssl = true
+
+[dev-packages]
+consoleme_ecs_cdk = {editable = true,path = "consoleme_ecs_cdk"}
+pytest = "*"
+
+[packages]
+boto3 = "*"
+pyyaml = "*"
+
+[requires]
+python_version = "3"

@@ -1,0 +1,26 @@
+-c requirements.txt
+asynctest
+bandit
+black
+coverage
+docker # Required by moto
+fakeredis
+flake8
+flake8-docstrings
+flake8-import-order
+mock
+mockredispy
+moto
+mypy
+pre-commit
+pytest
+pytest-asyncio
+pytest-cov
+pytest-html
+pytest-mock
+pytest-timeout
+pytest-tornado
+pytest-xdist
+readme_renderer
+tornado
+tox
